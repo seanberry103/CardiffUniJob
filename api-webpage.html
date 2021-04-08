@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+
+    <link rel="stylesheet" href="style.css">
+    <!-- <script type="text/javascript" src="OpenDay.json">
+    <script type="text/javascript" >
+                //var json = require('./OpenDay.json'); //(with path)
+
+      </script> -->
+  </head>
+
+  <body>
+    <div id="myData"></div>
+    <script>
+      var fs=require("fs");
+      var data=fs.readFileSync("./OpenDay.json", "utf8");
+      var words=JSON.parse(data);
+      document.getElementById("json").textContent = JSON.stringify(words, undefined, 2);
+      document.write_json(words);
+      appendData(words);
+
+
+    //fetch("./OpenDay.json")
+    //  .then(function (response) {
+    //  return response.json();
+    //  })
+    //  .then(function (data) {
+    //    appendData(data);
+    //  })
+    //  .catch(function (err) {
+    //    console.log(err);
+    //  });
+    //var json = require('./OpenDay.json'); //(with path)
+
+    //$.getJSON("OpenDay.json", function(json) {
+    //console.log(json); // this will show the info it in firebug console
+    //});
+    //appendData(json);
+        function appendData(data) {
+            var mainContainer = document.getElementById("myData");
+            for (var i = 0; i < data.length; i++) {
+                var div = document.createElement("div");
+                div.innerHTML = 'Name: ' + data[i];
+                mainContainer.appendChild(div);
+            }
+        }
+
+    </script>
+<script>
+//      Initialize the Auth0 application
+//      var webAuth = new auth0.WebAuth({
+//      domain:       'YOUR_DOMAIN',
+//      clientID:     'YOUR_CLIENT_ID'
+//    });
+
+  // Parse the URL and extract the Access Token
+//  webAuth.parseHash(window.location.hash, function(err, authResult) {
+//    if (err) {
+//      return console.log(err);
+//    }
+//    webAuth.client.userInfo(authResult.accessToken, function(err, user) {
+        // This method will make a request to the /userinfo endpoint
+        // and return the user object, which contains the user's information,
+        // similar to the response below.
+//    });
+//  });
+</script>
+    <h1> Cardiff Univerisity Test </h1>
+    <p> Couldn't get the code working after many attempts, spent more than 4 hours researching an answer but couldn't find a working solution. </p>
+    <p> Happy to go through the work i did and the struggles i encountered on this problem and would be happy to learn more. </p>
+    <pre id="json"></pre>
+
+  </body>
+
+</html>
+
+<!--GET https://opendaydata.cardiff.ac.uk/en/api/getProgrammesByOpenDay/7/userinfo
+Authorization: 'Bearer {eB8i0kbrtzFRk7LeLkuXRQW2XYS9ZN1eUq0OARNq4OxnngcqHvuiuLJxdwMCDMY5G11SzwDDsq20f6wtm5trdmsC8hDYBiZ8qqW68kNXvMVGba8ar7BB8wJXKHDIrP1pXN2kJ9vjnFkPAl3xQNJDTg}'
+
+curl --request GET \
+  --url 'https://opendaydata.cardiff.ac.uk/en/api/getProgrammesByOpenDay/7/userinfo' \
+  --header 'Authorization: Bearer {eB8i0kbrtzFRk7LeLkuXRQW2XYS9ZN1eUq0OARNq4OxnngcqHvuiuLJxdwMCDMY5G11SzwDDsq20f6wtm5trdmsC8hDYBiZ8qqW68kNXvMVGba8ar7BB8wJXKHDIrP1pXN2kJ9vjnFkPAl3xQNJDTg}' \
+  --header 'Content-Type: application/json'
+
+  Authorization: Bearer eB8i0kbrtzFRk7LeLkuXRQW2XYS9ZN1eUq0OARNq4OxnngcqHvuiuLJxdwMCDMY5G11SzwDDsq20f6wtm5trdmsC8hDYBiZ8qqW68kNXvMVGba8ar7BB8wJXKHDIrP1pXN2kJ9vjnFkPAl3xQNJDTg -->

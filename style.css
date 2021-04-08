@@ -1,0 +1,16 @@
+html {
+  font-family: 'helvetica neue', helvetica, arial, sans-serif;
+  background-color: coral;
+  background-image: url("image.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+body {
+  width: 800px;
+  margin: 0 auto;
+}
+h1 {
+  background-color: #ffe6cc;
+
+}
